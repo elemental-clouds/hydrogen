@@ -1,6 +1,6 @@
 # Hydrogen
 
-Elemental cloud type interfaces
+Elemental-clouds type interfaces
 
 ## Usage
 
