@@ -42,6 +42,8 @@ export interface RegionalCommonClassArgs extends CommonClassArgs {
 }
 
 export interface CommonInventoryItem {
-  attributes: unknown;
+  attributes: {
+    [key: string]: unknown;
+  };
   urn: ResourceUrn;
 }
