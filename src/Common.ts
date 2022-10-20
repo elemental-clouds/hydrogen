@@ -47,12 +47,12 @@ export interface RegionalCommonClassArgs extends CommonClassArgs {
 }
 
 /**
- * Attributes vary by resource type.  See the resource's <Type>InventoryItem
- * interface in the Osmium project for specific details.
+ * The attributes value depends on the resource type.  See the resource's <i><b>*InventoryItem</b></i>
+ * interface for specific details.  </br></br>Note the resource's interface is defined directly by the cloud provider.
  */
 export interface CommonInventoryItem {
+  /** values for attributes depends on the resource type and are set by the cloud provider */
   attributes: {
-    /** depends on the resource */
     [key: string]: unknown;
   };
   /** project specific URN identifying a resource */
