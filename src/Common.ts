@@ -40,10 +40,8 @@ export interface CommonClassArgs {
   sessionName?: AWSRoleSessionName;
   /** name given to an AWS resource used to perform a get request against to get its metadata */
   resources?: ResourceName[];
-}
-
-export interface RegionalCommonClassArgs extends CommonClassArgs {
-  region: AWSRegionName;
+  /** AWS region name, example: us-east-1 */
+  region?: AWSRegionName;
 }
 
 /**
