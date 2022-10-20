@@ -28,12 +28,17 @@ export type ResourceUrn = string;
 /** name given to an AWS resource used to perform a get request against to get its metadata */
 export type ResourceName = string;
 
-/** Common Class interface */
+/** Interface used for all inventory generation classes */
 export interface CommonClassArgs {
+  /** aws role arn */
   assumeRoleArn?: AWSRoleArn;
+  /** role external ID string */
   externalId?: AWSExternalId;
+  /** aws credential profile name */
   profile?: AWSProfileName;
+  /** AWS credential session name */
   sessionName?: AWSRoleSessionName;
+  /** name given to an AWS resource used to perform a get request against to get its metadata */
   resources?: ResourceName[];
 }
 
@@ -41,9 +46,15 @@ export interface RegionalCommonClassArgs extends CommonClassArgs {
   region: AWSRegionName;
 }
 
+/**
+ * Attributes vary by resource type.  See the resource's <Type>InventoryItem
+ * interface in the Osmium project for specific details.
+ */
 export interface CommonInventoryItem {
   attributes: {
+    /** depends on the resource */
     [key: string]: unknown;
   };
+  /** project specific URN identifying a resource */
   urn: ResourceUrn;
 }
