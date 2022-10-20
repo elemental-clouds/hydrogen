@@ -28,22 +28,6 @@ export type ResourceUrn = string;
 /** name given to an AWS resource used to perform a get request against to get its metadata */
 export type ResourceName = string;
 
-/** Interface used for all inventory generation classes */
-export interface CommonClassArgs {
-  /** aws role arn */
-  assumeRoleArn?: AWSRoleArn;
-  /** role external ID string */
-  externalId?: AWSExternalId;
-  /** aws credential profile name */
-  profile?: AWSProfileName;
-  /** AWS credential session name */
-  sessionName?: AWSRoleSessionName;
-  /** name given to an AWS resource used to perform a get request against to get its metadata */
-  resources?: ResourceName[];
-  /** AWS region name, example: us-east-1 */
-  region?: AWSRegionName;
-}
-
 /**
  * The attributes value depends on the resource type.  See the resource's <i><b>*InventoryItem</b></i>
  * interface for specific details.  </br></br>Note the resource's interface is defined directly by the cloud provider.
