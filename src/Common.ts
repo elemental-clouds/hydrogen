@@ -64,8 +64,8 @@ export type ComplianceState =
   | 'SKIPPED'
   | 'UNKNOWN';
 
-/** 
- * Titanium engine input arguments, procedure is an array of controls 
+/**
+ * Titanium engine input arguments, procedure is an array of controls
  * and item is the resource to compare the controls against.
  */
 export interface EngineConstructor {
