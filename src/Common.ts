@@ -40,3 +40,56 @@ export interface CommonInventoryItem {
   /** project specific URN identifying a resource */
   urn: ResourceUrn;
 }
+
+/** control matching condition action */
+export type Action =
+  | '$includes'
+  | '$excludes'
+  | '$if_includes'
+  | '$if_excludes';
+
+/** condition the Action is looking to match */
+export type Control = { [key in Action]?: ControlMap[] };
+
+/** Resource configuration map, similar to CommonInventory Item but without the URNWWWW */
+export type ControlMap = { attributes: { [key: string]: unknown } };
+
+/** an array of conditions to validate a resource against */
+export type ControlProcedure = Control[];
+
+/** the compliance state of a resource against a specific control */
+export type ComplianceState =
+  | 'COMPLIANT'
+  | 'NON_COMPLIANT'
+  | 'SKIPPED'
+  | 'UNKNOWN';
+
+/** 
+ * Titanium engine input arguments, procedure is an array of controls 
+ * and item is the resource to compare the controls against.
+ */
+export interface EngineConstructor {
+  procedure: ControlProcedure;
+  item: CommonInventoryItem;
+}
+
+/**
+ * The individual result of comparing a resource against a specific control
+ */
+export interface ControlValidation {
+  action: Action;
+  map: ControlMap;
+  result: ComplianceState;
+}
+
+/**
+ * The final result of comparing a resource against a set of control conditions
+ */
+export interface FinalControlValidationResult {
+  compliant: ControlValidation[];
+  controlProcedure: ControlProcedure;
+  item: CommonInventoryItem;
+  nonCompliant: ControlValidation[];
+  result: ComplianceState;
+  skipped: ControlValidation[];
+}
