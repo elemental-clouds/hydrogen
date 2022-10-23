@@ -51,7 +51,7 @@ export type Action =
 /** condition the Action is looking to match */
 export type Control = { [key in Action]?: ControlMap[] };
 
-/** Resource configuration map, similar to CommonInventory Item but without the URNWWWW */
+/** Resource configuration map, similar to CommonInventory Item but without the URN */
 export type ControlMap = { attributes: { [key: string]: unknown } };
 
 /** an array of conditions to validate a resource against */
