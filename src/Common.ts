@@ -93,3 +93,19 @@ export interface FinalControlValidationResult {
   result: ComplianceState;
   skipped: ControlValidation[];
 }
+
+/** Interface used for all credentialed classes */
+export interface CredentialedClassArgs {
+  /** aws role arn */
+  assumeRoleArn?: AWSRoleArn;
+  /** role external ID string */
+  externalId?: AWSExternalId;
+  /** aws credential profile name */
+  profile?: AWSProfileName;
+  /** AWS credential session name */
+  sessionName?: AWSRoleSessionName;
+  /** name given to an AWS resource used to perform a get request against to get its metadata */
+  resources?: ResourceName[];
+  /** AWS region name, example: us-east-1 */
+  region: AWSRegionName;
+}
