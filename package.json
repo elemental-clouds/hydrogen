@@ -49,6 +49,7 @@
       ]
     }
   },
+  "main": "Common.js",
   "homepage": "https://github.com/lstatro/hydrogen#readme",
   "keywords": [],
   "license": "MIT",
@@ -67,5 +68,5 @@
     "format": "npx prettier --check ./",
     "lint": "eslint . --ext .ts"
   },
-  "version": "0.0.8"
+  "version": "0.0.9"
 }
