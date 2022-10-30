@@ -49,6 +49,7 @@
       ]
     }
   },
+  "main": "Common.js",
   "homepage": "https://github.com/lstatro/hydrogen#readme",
   "keywords": [],
   "license": "MIT",

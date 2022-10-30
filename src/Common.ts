@@ -55,7 +55,11 @@ export type Control = { [key in Action]?: ControlMap[] };
 export type ControlMap = { attributes: { [key: string]: unknown } };
 
 /** an array of conditions to validate a resource against */
-export type ControlProcedure = Control[];
+export interface ControlProcedure {
+  description: string;
+  name: string;
+  procedure: Control[];
+}
 
 /** the compliance state of a resource against a specific control */
 export type ComplianceState =
