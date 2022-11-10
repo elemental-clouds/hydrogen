@@ -68,5 +68,5 @@
     "format": "npx prettier --check ./",
     "lint": "eslint . --ext .ts"
   },
-  "version": "0.0.9"
+  "version": "0.0.10"
 }
