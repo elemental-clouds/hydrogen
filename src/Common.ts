@@ -37,6 +37,8 @@ export interface CommonInventoryItem {
   attributes: {
     [key: string]: unknown;
   };
+  /** AWS Resource name, typically the physical ID */
+  resourceId: ResourceName;
   /** project specific URN identifying a resource */
   urn: ResourceUrn;
 }
