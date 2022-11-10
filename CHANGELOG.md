@@ -7,7 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [0.0.8] - 2022-10-30
+## [0.0.10] - 2022-11-10
+
+### Changed
+
+- Added resource ID to inventory item.
+
+### Fixed
+- CHANGELOG.md omitted `v0.0.9`'s release
+
+## [0.0.9] - 2022-10-30
 
 ### Changed
 
